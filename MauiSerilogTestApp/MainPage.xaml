@@ -5,21 +5,9 @@
 
     <ScrollView>
         <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+            Spacing="10"
+            Padding="10,0"
+            VerticalOptions="Start">
 
             <Label
                 Text="Welcome to .NET Multi-platform App UI"
@@ -31,15 +19,30 @@
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
             <Button
                 x:Name="CheckConnectivityBtn"
                 Text="Check Connectivity"
-                SemanticProperties.Hint="Checks what connectivity is available from the app"
                 Clicked="OnCheckConnectivity"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CheckInitLoggerBtn"
+                Text="Init Logger"
+                Clicked="OnInitLogger"
+                HorizontalOptions="Center" />
+
+            <Entry
+                x:Name="LoggerUrl"
+                Text="http://10.0.0.105:4004/"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CheckTestLoggerBtn"
+                Text="Test Logger"
+                Clicked="OnTestLogger"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
