@@ -1,4 +1,6 @@
-﻿namespace MauiEmguCvInit;
+﻿using Emgu.CV;
+
+namespace MauiEmguCvInit;
 
 public partial class MainPage : ContentPage
 {
@@ -7,9 +9,9 @@ public partial class MainPage : ContentPage
 	public MainPage()
 	{
 		InitializeComponent();
-	}
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
+    private void OnCounterClicked(object sender, EventArgs e)
 	{
 		count++;
 
@@ -20,5 +22,14 @@ public partial class MainPage : ContentPage
 
 		SemanticScreenReader.Announce(CounterBtn.Text);
 	}
+
+    private void OnInitClicked(object sender, EventArgs e)
+    {
+#if __IOS__
+        CvInvokeIOS.Init();
+#elif __ANDROID__
+        CvInvokeAndroid.Init();
+#endif
+    }
 }
 
